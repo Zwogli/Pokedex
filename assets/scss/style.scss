@@ -1,0 +1,4 @@
+//  open path "global/" read 'index.sass' and load
+//  loaded files must write '_xxx.xx' don´t forget !'_'!
+@forward 'global';
+@forward 'components';
