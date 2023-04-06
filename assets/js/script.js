@@ -15,6 +15,6 @@ let currentPokemon;
       document.getElementById('main_pokemon_id').innerHTML = /*html*/`
       #${currentPokemon['id']}
       `;
-      document.getElementById('main_pokemon_img').src = currentPokemon['sprites']['front_default'];
+      document.getElementById('main_pokemon_img').src = currentPokemon['sprites'].other['official-artwork']['front_default'];
       document.getElementById('main_pokemon_types').innerHTML = currentPokemon['types'];
     }
