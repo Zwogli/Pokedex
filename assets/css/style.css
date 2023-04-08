@@ -9,6 +9,7 @@
 }
 
 .navbar {
+  min-height: 78px;
   background-color: #323232 !important;
   border: 2px solid #2F2F2F;
   position: fixed;
@@ -68,6 +69,7 @@
 
 @media (min-width: 650px) {
   .main {
+    margin-top: 78px;
     background: url(../img/body_bg.png);
     background-attachment: fixed;
     padding: 0 10%;
