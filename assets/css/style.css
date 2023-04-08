@@ -49,6 +49,13 @@
     display: flex;
   }
 }
+.main {
+  margin-top: 66px;
+}
+.main-mtop {
+  margin-top: 124px;
+}
+
 .background-color-bug {
   background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
   background-color: #729f3f;
