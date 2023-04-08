@@ -1,3 +1,7 @@
+.icon-48 {
+  height: 48px;
+}
+
 .height-50 {
   height: 50px;
 }
@@ -44,13 +48,21 @@
   filter: invert(1);
 }
 
-@media (min-width: 650px) {
+.logo {
+  position: absolute;
+  top: 8px;
+  left: 24px;
+}
+
+@media (min-width: 850px) {
   .navbar {
-    justify-content: space-between;
     flex-direction: row;
   }
   .navbar-search {
     display: flex;
+    position: absolute;
+    top: 8px;
+    right: 24px;
   }
   .icon-search {
     display: none;
