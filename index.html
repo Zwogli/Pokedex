@@ -15,6 +15,7 @@
   <script src="assets/js/template.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/support.js"></script>
+  <script src="assets/js/feature.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
 
 
@@ -22,16 +23,20 @@
 
 
 <body onload="loadPokemon()">
-  <header>
-    <div>
-      <img src="assets/img/pokeball.svg" alt="pokeball">
-      <img src="assets/img/logo.png" alt="Pokedex Logo">
+  <nav class="navbar navbar-dark bg-dark px-5">
+    <!-- Navbar content -->
+    <div class="height-50 d-flex align-items-center">
+      <img class="h-100 me-3" src="assets/img/pokeball.svg" alt="pokeball">
+      <img class="h-100" src="assets/img/logo.png" alt="Pokedex Logo">
     </div>
-    <form action="">
-      <input type="search">
-      <button>search</button>
+
+    <form id="searchbar" class="navbar-search height-50 align-items-center" action="">
+      <input class="input-search h-100" type="search" placeholder="NAME or ID">
+      <button type="button" class="btn btn-search btn-secondary btn-lg h-100">search</button>
     </form>
-  </header>
+
+    <img onclick="searchbarToggle()" class="icon-search" src="assets/img/icon/search.svg" alt="">
+  </nav>
 
   <main>
     <div id="main_pokemon">

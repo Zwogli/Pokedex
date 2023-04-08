@@ -1,3 +1,54 @@
+.height-50 {
+  height: 50px;
+}
+.height-70 {
+  height: 70px;
+}
+.height-70-max {
+  max-height: 70px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.navbar-search {
+  margin-top: 8px;
+  display: none;
+}
+
+.btn-search {
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+.input-search {
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  border: 0;
+}
+.input-search:focus {
+  outline: none;
+}
+
+.icon-search {
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  filter: invert(1);
+}
+
+@media (min-width: 650px) {
+  .navbar {
+    justify-content: space-between;
+  }
+  .navbar-search {
+    display: flex;
+  }
+}
 .background-color-bug {
   background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
   background-color: #729f3f;
