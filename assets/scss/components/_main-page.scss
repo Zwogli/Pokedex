@@ -1,6 +1,16 @@
 .main{
-  margin-top: 66px;
+  margin-top: 78px;
   &-mtop{
-    margin-top: 124px;
+    margin-top: 128px;
+  }
+  &-section{
+    background-color: white!important;
+    background: url(../img/container_bg.png);
+  }
+}
+@media(min-width: 650px){
+  .main{
+    background: url(../img/body_bg.png);
+    padding: 0 10%;
   }
 }

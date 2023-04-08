@@ -9,6 +9,8 @@
 }
 
 .navbar {
+  background-color: #323232 !important;
+  border: 2px solid #2F2F2F;
   position: fixed;
   top: 0;
   left: 0;
@@ -44,18 +46,32 @@
 @media (min-width: 650px) {
   .navbar {
     justify-content: space-between;
+    flex-direction: row;
   }
   .navbar-search {
     display: flex;
   }
+  .icon-search {
+    display: none;
+  }
 }
 .main {
-  margin-top: 66px;
+  margin-top: 78px;
 }
 .main-mtop {
-  margin-top: 124px;
+  margin-top: 128px;
+}
+.main-section {
+  background-color: white !important;
+  background: url(../img/container_bg.png);
 }
 
+@media (min-width: 650px) {
+  .main {
+    background: url(../img/body_bg.png);
+    padding: 0 10%;
+  }
+}
 .background-color-bug {
   background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
   background-color: #729f3f;

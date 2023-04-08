@@ -10,6 +10,8 @@
   }
 }
 .navbar{
+  background-color: #323232!important;
+  border: 2px solid #2F2F2F;
   position: fixed;
   top: 0;
   left: 0;
@@ -42,8 +44,12 @@
 @media(min-width: 650px){
   .navbar{
     justify-content: space-between;
+    flex-direction: row;
     &-search{
       display: flex;
     }
+  }
+  .icon-search{
+    display: none;
   }
 }
