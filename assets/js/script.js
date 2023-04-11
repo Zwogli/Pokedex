@@ -1,6 +1,6 @@
 let allPokemonsNumber,
     pokemontest,
-    loadIntervall = 5;
+    loadIntervall = 20;
 
 async function loadAllPokemons(){
   // load all Pokemons
@@ -14,42 +14,63 @@ async function loadAllPokemons(){
 
   //! console.log('Any Pokemon', allPokemonsNumber);
 
-  loadPokemons();
+  renderPokemons();
 }
 
-async function loadPokemons(){
+async function renderPokemons(){
   for (let i = 1; i <= loadIntervall; i++) {
     let allPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${i}/`;
     let response = await fetch(allPokemonUrl);
     let respondPokemon = await response.json();
     let pokemon = respondPokemon;
-    pokemontest = respondPokemon;
-
+    pokemontest = respondPokemon;//! test
+    let pokemonId = pokemon['id'].toString().padStart(4,'0');
+    
+    
     //! console.log(pokemon);
 
-    renderMainPagePokemon(pokemon, i);
-    for (let j = 0; j < pokemon.types.length; j++) {
-      let pokemonType = pokemon.types[j].type.name;
-
-      renderPokemonType(pokemonType, i, j);
-    }
+    generateHtmlMainPagePokemon(pokemon, i, pokemonId);
+    renderPokemonTypes(pokemon, i);
   }
 }
 
-function renderMainPagePokemon(pokemon, i){
+function renderPokemonTypes(pokemon, i){
+  for (let j = 0; j < pokemon.types.length; j++) {
+    let pokemonTypes = pokemon.types[j].type.name;
+
+    let firstType = pokemon.types[0].type.name;
+    generateHtmlPokemonTypes(pokemonTypes, i, j);
+    generateHtmlBgTypeColor(pokemonTypes, firstType, i, j);
+  }
+}
+
+function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
   document.getElementById('main-section').innerHTML += /*html*/`
-    <div id="main_pokemon_${i}">
-      <h1>${pokemon['name']}</h1>
-      <span>#${pokemon['id']}</span>
-      <img src="${pokemon['sprites'].other['official-artwork']['front_default']}">
-      <div id="pokemon-typ-${i}"></div>
+    <div id="main_pokemon_${i}" class="main-pokemon">
+      <h1 class="main-pokemon-name">${pokemon['name']}</h1>
+      <div class="main-pokemon-infos">
+        <div class="main-pokemon-infos-id_typ">
+          <span class="main-pokemon-infos-id">#${pokemonId}</span>
+          <div id="pokemon-typ-${i}"></div>
+        </div>
+        <img class="w-25" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
+      </div>
     </div>
 `;
 }
 
-function renderPokemonType(pokemonType, i, j){
+
+function generateHtmlPokemonTypes(pokemonTypes, i, j){
   document.getElementById(`pokemon-typ-${i}`).innerHTML += /*html */`
-    <div id="pokemon-type-${i}${j}">
-      ${pokemonType}
+    <div id="pokemon-type-${i}${j}" class="main-pokemon-infos-typ">
+      ${pokemonTypes}
     </div>
-    `;}
+`;}
+
+function generateHtmlBgTypeColor(pokemonTypes, firstType, i, j){
+  let pokemonCardId = document.getElementById(`main_pokemon_${i}`);
+  pokemonCardId.classList.add(`background-color-${firstType}`);
+
+  let pokemonTypCardColor = document.getElementById(`pokemon-type-${i}${j}`);
+  pokemonTypCardColor.classList.add(`background-color-${pokemonTypes}`)
+}
