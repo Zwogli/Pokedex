@@ -1,6 +1,6 @@
 let allPokemonsNumber,
     pokemontest,
-    loadIntervall = 30;
+    loadIntervall = 251;
 
 async function loadAllPokemons(){
   // load all Pokemons
@@ -71,7 +71,7 @@ function generateHtmlPokemonTypes(pokemonTypes, i, j){
 
 function generateHtmlBgTypeColor(pokemonTypes, firstType, i, j){
   let pokemonCardId = document.getElementById(`main_pokemon_${i}`);
-  pokemonCardId.classList.add(`background-color-${firstType}`);
+  pokemonCardId.classList.add(`${firstType}`);
 
   let pokemonTypCardColor = document.getElementById(`pokemon-type-${i}${j}`);
   pokemonTypCardColor.classList.add(`background-color-${pokemonTypes}`)
