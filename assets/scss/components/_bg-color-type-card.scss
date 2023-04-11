@@ -1,51 +1,72 @@
 .grass{
-  background-color: #73cc50;
+  background-color: #a6ca71;
+  text-shadow: var(--text-shadow-white);
 }
 .water{
   background-color: #68a4d4;
+  text-shadow: var(--text-shadow-black);
 }
 .fire{
   background-color: rgb(238, 181, 148);
+  text-shadow: var(--text-shadow-black);
 }
 .bug{
   background-color: rgb(215, 240, 168);
+  text-shadow: var(--text-shadow-black);
 }
 .poison{
   background-color: rgb(194, 165, 240);
+  text-shadow: var(--text-shadow-black);
 }
 .psychic{
   background-color: #f096cb;
+  text-shadow: var(--text-shadow-black);
 }
 .normal{
   background-color: #babbbc;
+  text-shadow: var(--text-shadow-white);
 }
 .electric{
   background-color: rgb(243, 241, 115);
+  text-shadow: var(--text-shadow-white);
 }
 .ground{
   background-color: #ceb649;
+  text-shadow: var(--text-shadow-white);
 }
 .fairy{
   background-color: rgb(250, 207, 250);
+  text-shadow: var(--text-shadow-white);
 }
 .fighting{
   background-color: #df8f5d;
+  text-shadow: var(--text-shadow-black);
 }
 .ghost{
   background-color: #7b62a3af;
+  text-shadow: var(--text-shadow-black);
 }
 .rock{
   background-color: #beaf6e;
+  text-shadow: var(--text-shadow-black);
 }
 .ice{
   background-color: #d1f4ff;
+  text-shadow: var(--text-shadow-white);
 }
 .dragon{
   background-color: #f9917e;
+  text-shadow: var(--text-shadow-black);
 }
 .dark{
   background-color: #8a8989;
+  text-shadow: var(--text-shadow-black);
 }
 .steel{
   background-color: rgb(224, 236, 236);
+  text-shadow: var(--text-shadow-white);
+}
+.flying{
+  background-color: #67ceeb;
+  text-shadow: var(--text-shadow-white);
 }
