@@ -51,9 +51,9 @@ function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
       <div class="main-pokemon-infos">
         <div class="main-pokemon-infos-id_typ">
           <span class="main-pokemon-infos-id">#${pokemonId}</span>
-          <div id="pokemon-typ-${i}"></div>
+          <div id="pokemon-typ-${i}" class="main-pokemon-infos-typs"></div>
         </div>
-        <img class="w-25" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
+        <img class="main-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
       </div>
     </div>
 `;
