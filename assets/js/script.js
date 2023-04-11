@@ -1,6 +1,6 @@
 let allPokemonsNumber,
     pokemontest,
-    loadIntervall = 20;
+    loadIntervall = 30;
 
 async function loadAllPokemons(){
   // load all Pokemons
@@ -53,7 +53,9 @@ function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
           <span class="main-pokemon-infos-id">#${pokemonId}</span>
           <div id="pokemon-typ-${i}" class="main-pokemon-infos-typs"></div>
         </div>
-        <img class="main-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
+        <div class="main-pokemon-img-container">
+          <img class="main-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
+        </div>
       </div>
     </div>
 `;
