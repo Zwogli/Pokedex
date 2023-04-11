@@ -13,18 +13,18 @@
   margin-top: 1rem;
   // padding: 0 1rem;
   width: 100%;
-  height: 150px;
+  // height: 150px;
   display: flex;
   flex-direction: column;
   &:hover{
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3),
     0 -5px 5px rgba(0, 0, 0, 0.3);
     .main-pokemon-img{
-      margin-top: -17px;
+      margin-top: -19px;
       position: absolute;
       right: 26px;
       top: -10px;
-      width: 30%;
+      width: 110px;
       filter: drop-shadow(10px 20px 4px rgba(0,0,0, .5));
     }
   }
@@ -36,7 +36,7 @@
     text-transform: capitalize;
   }
   &-img{
-    width: 30%;
+    width: 84px;
     filter: drop-shadow(5px 10px 4px rgba(0,0,0, .5));
   }
   &-infos{
