@@ -57,6 +57,7 @@ function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
           <img class="main-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
         </div>
       </div>
+      <img class="main-pokemon-bg" src="assets/img/pokeball_bg.png" alt="pokeball-bg">
     </div>
 `;
 }
