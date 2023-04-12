@@ -1,6 +1,7 @@
 let allPokemonsNumber,
     pokemontest,
-    loadIntervall = 50;
+    loadIntervall = 50,
+    overlayToggle = false;
 
 async function loadAllPokemons(){
   // load all Pokemons
@@ -24,11 +25,11 @@ async function renderPokemons(){
     let respondPokemon = await response.json();
     let pokemon = respondPokemon;
     pokemontest = respondPokemon;//! test
-    let pokemonId = pokemon['id'].toString().padStart(4,'0');
+    let pokemonId = numberToStringID(pokemon);
     
     
     //! console.log(pokemon);
-
+    
     generateHtmlMainPagePokemon(pokemon, i, pokemonId);
     renderPokemonTypes(pokemon, i);
   }
@@ -37,13 +38,28 @@ async function renderPokemons(){
 function renderPokemonTypes(pokemon, i){
   for (let j = 0; j < pokemon.types.length; j++) {
     let pokemonTypes = pokemon.types[j].type.name;
-
     let firstType = pokemon.types[0].type.name;
+
+    if(overlayToggle == false){
     generateHtmlPokemonTypes(pokemonTypes, i, j);
     generateHtmlBgTypeColor(pokemonTypes, firstType, i, j);
+    }
   }
 }
 
-function cardSelect(pokemon, i, pokemonId){
+function toggleOverlay(){ 
+  let overlay = document.getElementById('overlay'),
+      body = document.getElementById('body');
 
+  overlay.classList.toggle('d-none');
+  body.classList.toggle('overflow-hidden');
+  overlayToggle = !overlayToggle;
+}
+
+async function renderOverlayCar(i){
+  let allPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${i}/`;
+  let response = await fetch(allPokemonUrl);
+  let pokemon = await response.json();
+  let pokemonId = numberToStringID(pokemon);
+  generatePokemonCard(pokemon, i, pokemonId);
 }

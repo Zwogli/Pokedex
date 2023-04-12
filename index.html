@@ -22,7 +22,7 @@
 </head>
 
 
-<body onload="loadAllPokemons()">
+<body id="body" onload="loadAllPokemons()">
   <nav class="navbar navbar-dark bg-dark px-5">
     <!-- Navbar content -->
     <img class="logo icon-48 me-3" src="assets/img/pokeball.svg" alt="pokeball">
@@ -43,7 +43,7 @@
     </section>
   </main>
 
-  <section class="overlay d-none"></section>
+  <section id="overlay" onclick="toggleOverlay()" class="overlay d-none"></section>
 
   <div class="info-container"></div>
 </body>
