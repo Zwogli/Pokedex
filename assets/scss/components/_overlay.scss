@@ -9,11 +9,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .main-pokemon {
+  .overlay-pokemon {
     width: 250px;
     height: 250px;
-    border-radius: 41% 21%/7% 24%;
+    border-radius: 21% 41%/24% 7%;
     border: 1px solid rgba(0, 0, 0, 0.5);
     margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media(min-width: 500px){
+  .overlay-pokemon{
+    &-name{
+      border-radius: 22% 46%/81% 22%;
+    }
   }
 }
