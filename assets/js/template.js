@@ -8,7 +8,7 @@ function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
           <div id="pokemon-typ-${i}" class="main-pokemon-infos-typs"></div>
         </div>
         <div class="main-pokemon-img-container">
-          <img class="main-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
+          <img class="main-pokemon-img  main-pokemon-img-shadow" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
         </div>
       </div>
       <img class="main-pokemon-bg" src="assets/img/pokeball_bg.png" alt="pokeball-bg">
