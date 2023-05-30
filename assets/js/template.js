@@ -49,6 +49,15 @@ function generatePokemonCard(pokemon, i, pokemonId){
       </div>
       <img class="main-pokemon-bg" src="assets/img/pokeball_bg.png" alt="pokeball-bg">
     </div>
-    <div id="overlay-pokemon-more" class="overlay-pokemon-more"></div>
+    <div id="overlay-pokemon-more" onclick="event.stopPropagation()" class="overlay-pokemon-more">
+      <div class="overlay-pokemon-more-headline">
+        <img class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_left.png" alt="arrow left">
+        <span>About</span>
+        <span>Base Stat</span>
+        <span>Moves</span>
+        <img class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_right.png" alt="arrow right">
+      </div>
+      <div></div>
+    </div>
   `;
 }
