@@ -42,10 +42,11 @@ function renderPokemonTypes(pokemon, i){
     
     if(overlayToggle == false){
       let cardId = 'main_pokemon_'
-      generateHtmlPokemonTypes(pokemonTypes, i, j);
+      generateHtmlPokemonTypes(cardId, pokemonTypes, i, j);
       generateHtmlBgTypeColor(cardId, pokemonTypes, firstType, i, j);
     }else{
-      let cardId = 'overlay_pokemon_'
+      let cardId = 'overlay_pokemon_';
+      generateHtmlPokemonTypes(cardId, pokemonTypes, i, j);
       generateHtmlBgTypeColor(cardId, pokemonTypes, firstType, i, j);
     }
   }

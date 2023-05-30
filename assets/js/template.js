@@ -5,7 +5,7 @@ function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
       <div class="main-pokemon-infos">
         <div class="main-pokemon-infos-id_typ">
           <span class="main-pokemon-infos-id">#${pokemonId}</span>
-          <div id="pokemon-typ-${i}" class="main-pokemon-infos-typs"></div>
+          <div id="main_pokemon_typ-${i}" class="main-pokemon-infos-typs"></div>
         </div>
         <div class="main-pokemon-img-container">
           <img class="main-pokemon-img  main-pokemon-img-shadow" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
@@ -17,9 +17,9 @@ function generateHtmlMainPagePokemon(pokemon, i, pokemonId){
 }
 
 
-function generateHtmlPokemonTypes(pokemonTypes, i, j){
-  document.getElementById(`pokemon-typ-${i}`).innerHTML += /*html */`
-    <div id="pokemon-type-${i}${j}" class="main-pokemon-infos-typ">
+function generateHtmlPokemonTypes(cardId, pokemonTypes, i, j){
+  document.getElementById(`${cardId}typ-${i}`).innerHTML += /*html */`
+    <div id="${cardId}type-${i}${j}" class="main-pokemon-infos-typ">
       ${pokemonTypes}
     </div>
 `;}
@@ -28,7 +28,7 @@ function generateHtmlBgTypeColor(cardId, pokemonTypes, firstType, i, j){
   let pokemonCardId = document.getElementById(`${cardId}${i}`);
   pokemonCardId.classList.add(`${firstType}`);
 
-  let pokemonTypCardColor = document.getElementById(`pokemon-type-${i}${j}`);
+  let pokemonTypCardColor = document.getElementById(`${cardId}type-${i}${j}`);
   pokemonTypCardColor.classList.add(`background-color-${pokemonTypes}`)
 }
 
@@ -38,16 +38,17 @@ function generatePokemonCard(pokemon, i, pokemonId){
   pokemonCard.innerHTML = /*html*/`
     <div id="overlay_pokemon_${i}" onclick="event.stopPropagation()" class="overlay-pokemon">  
       <h1 class="main-pokemon-name overlay-pokemon-name">${pokemon['name']}</h1>
-      <div class="main-pokemon-infos">
+      <div class="main-pokemon-infos overlay-pokemon-infos">
         <div class="main-pokemon-infos-id_typ">
           <span class="main-pokemon-infos-id">#${pokemonId}</span>
-          <div id="overlay-pokemon-typ-${i}" class="main-pokemon-infos-typs"></div>
+          <div id="overlay_pokemon_typ-${i}" class="main-pokemon-infos-typs  overlay-pokemon-infos-typ"></div>
         </div>
         <div class="main-pokemon-img-container">
-          <img class="main-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
+          <img class="main-pokemon-img overlay-pokemon-img" src="${pokemon['sprites'].other['official-artwork']['front_default']}">
         </div>
       </div>
       <img class="main-pokemon-bg" src="assets/img/pokeball_bg.png" alt="pokeball-bg">
     </div>
+    <div id="overlay-pokemon-more" class="overlay-pokemon-more"></div>
   `;
 }
