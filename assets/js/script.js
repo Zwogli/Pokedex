@@ -66,6 +66,57 @@ async function renderOverlayCard(i){
   let response = await fetch(allPokemonUrl);
   let pokemon = await response.json();
   let pokemonId = numberToStringID(pokemon);
+
   generatePokemonCard(pokemon, i, pokemonId);
   renderPokemonTypes(pokemon, i);
+  renderPokemonAbout(pokemon, i);
+  renderPokemonBaseStats(pokemon, i);
+  renderPokemonMoves(pokemon, i);
+}
+
+function renderPokemonAbout(pokemon, i){
+  let containerId = document.getElementById(`about-${i}`);
+  containerId.innerHTML = '';
+  containerId.innerHTML = generatePokemonAboutHtml(pokemon, i);
+
+  let containerIdTyp = document.getElementById(`about-typ-${i}`);
+  for (let j = 0; j < pokemon.types.length; j++) {
+    const pokemonAllTypes = pokemon.types[j];
+    console.log(pokemonAllTypes)
+    
+    containerIdTyp.innerHTML += /*html*/`
+      <li>${pokemonAllTypes.type.name}</li>
+    `;
+  }
+}
+
+function renderPokemonBaseStats(pokemon, i){
+  let containerId = document.getElementById(`baseStat-${i}`);
+  containerId.innerHTML = '';
+
+  for (let j = 0; j < pokemon.stats.length; j++) {
+    const pokemonAllStats = pokemon.stats[j];
+    
+    containerId.innerHTML += /*html*/`
+    <li>
+      <span>${pokemonAllStats.stat.name}</span>
+      <span>${pokemonAllStats.base_stat}</span>
+    </li>
+    `;
+  }
+}
+
+function renderPokemonMoves(pokemon, i){
+  let containerId = document.getElementById(`moves-${i}`);
+  containerId.innerHTML = '';
+  
+  for (let j = 0; j < pokemon.moves.length; j++) {
+    const pokemonAllMoves = pokemon.moves[j];
+
+    containerId.innerHTML += /*html*/`
+    <li>
+      <span>${pokemonAllMoves.move.name}</span>
+    </li>
+    `;
+  }
 }

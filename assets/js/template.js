@@ -57,7 +57,34 @@ function generatePokemonCard(pokemon, i, pokemonId){
         <span>Moves</span>
         <img class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_right.png" alt="arrow right">
       </div>
-      <div></div>
+
+      <div>
+        <ul id="about-${i}" class=""></ul>
+        <ul id="baseStat-${i}" class="d-none"></ul>
+        <ul id="moves-${i}" class="d-none"></ul>
+      </div>
+
     </div>
   `;
+}
+
+function generatePokemonAboutHtml(pokemon, i){
+  return /*html*/`
+  <li>
+    <span>base experience:</span>
+    <span>${pokemon.base_experience}</span>
+  </li>
+  <li>
+    <span>height:</span>
+    <span>${pokemon.height}</span>
+  </li>
+  <li>
+    <span>weight:</span>
+    <span>${pokemon.weight}</span>
+  </li>
+  <li>
+    <span>typ:</span>
+    <ol id="about-typ-${i}"></ol>
+  </li>
+   `
 }
