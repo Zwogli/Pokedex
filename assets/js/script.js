@@ -1,5 +1,4 @@
 let allPokemonsNumber,
-    pokemontest,
     loadIntervall = 50,
     overlayToggle = false;
 
@@ -24,9 +23,7 @@ async function renderPokemons(){
     let response = await fetch(allPokemonUrl);
     let respondPokemon = await response.json();
     let pokemon = respondPokemon;
-    pokemontest = respondPokemon;//! test
     let pokemonId = numberToStringID(pokemon);
-    
     
     //! console.log(pokemon);
     
@@ -109,7 +106,7 @@ function renderPokemonBaseStats(pokemon, i){
 function renderPokemonMoves(pokemon, i){
   let containerId = document.getElementById(`moves-${i}`);
   containerId.innerHTML = '';
-  
+
   for (let j = 0; j < pokemon.moves.length; j++) {
     const pokemonAllMoves = pokemon.moves[j];
 
