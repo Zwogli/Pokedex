@@ -30,9 +30,9 @@
       <img class="h-100" src="assets/img/logo.png" alt="Pokedex Logo">
     </div>
 
-    <form id="searchbar" class="navbar-search height-50 align-items-center" action="">
-      <input class="input-search h-100" type="search" placeholder="NAME or ID">
-      <button type="button" class="btn btn-search btn-secondary btn-lg h-100">search</button>
+    <form id="searchbar" onsubmit="searchPokemon(); return false" class="navbar-search height-50 align-items-center" action="">
+      <input id="searchbar-input"  class="input-search h-100" type="search" placeholder="NAME">
+      <button type="submit" class="btn btn-search btn-secondary btn-lg h-100">search</button>
     </form>
 
     <img onclick="searchbarToggle()" class="icon-search" src="assets/img/icon/search.svg" alt="">

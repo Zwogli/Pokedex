@@ -1,6 +1,8 @@
 let allPokemonsNumber,
     loadIntervall = 50,
-    overlayToggle = false;
+    overlayToggle = false,
+    allPokemonsJson,
+    searchedPokemon = [];
 
 async function loadAllPokemons(){
   // load all Pokemons
@@ -8,6 +10,7 @@ async function loadAllPokemons(){
   let response = await fetch(allPokemonsUrls);
   let respondPokemons = await response.json();
   let allPokemonsResultsUrl = respondPokemons['results'];
+  allPokemonsJson = allPokemonsResultsUrl;
   allPokemonsNumber = allPokemonsResultsUrl.length;
 
   //! console.log('Any Pokemon', allPokemonsNumber);
