@@ -51,11 +51,11 @@ function generatePokemonCard(pokemon, i, pokemonId){
     </div>
     <div id="overlay-pokemon-more" onclick="event.stopPropagation()" class="overlay-pokemon-more">
       <div class="overlay-pokemon-more-headline">
-        <img class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_left.png" alt="arrow left">
+        <img onclick="overlayPokemonGellery(-1, ${i})" class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_left.png" alt="arrow left">
         <span>About</span>
         <span>Base Stat</span>
         <span>Moves</span>
-        <img class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_right.png" alt="arrow right">
+        <img onclick="overlayPokemonGellery(1, ${i})" class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_right.png" alt="arrow right">
       </div>
 
       <div>

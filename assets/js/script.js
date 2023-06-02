@@ -8,9 +8,7 @@ async function loadAllPokemons(){
   let response = await fetch(allPokemonsUrls);
   let respondPokemons = await response.json();
   let allPokemonsResultsUrl = respondPokemons['results'];
-  let allPokemons = allPokemonsResultsUrl.length;
-
-  allPokemonsNumber = allPokemons;
+  allPokemonsNumber = allPokemonsResultsUrl.length;
 
   //! console.log('Any Pokemon', allPokemonsNumber);
 
@@ -79,7 +77,6 @@ function renderPokemonAbout(pokemon, i){
   let containerIdTyp = document.getElementById(`about-typ-${i}`);
   for (let j = 0; j < pokemon.types.length; j++) {
     const pokemonAllTypes = pokemon.types[j];
-    console.log(pokemonAllTypes)
     
     containerIdTyp.innerHTML += /*html*/`
       <li>${pokemonAllTypes.type.name}</li>
@@ -112,8 +109,22 @@ function renderPokemonMoves(pokemon, i){
 
     containerId.innerHTML += /*html*/`
     <li>
-      <span>${pokemonAllMoves.move.name}</span>
+      <span>${pokemonAllMoves.move.name}</span
+      >
     </li>
     `;
+  }
+}
+
+async function overlayPokemonGellery(newCard, i){
+  let activCard = i + newCard
+  if(activCard <= 0){
+    let activCard = 1 //allPokemonsNumber
+    renderOverlayCard(activCard);
+  }else if(activCard >= allPokemonsNumber){
+    let activCard = 1
+    renderOverlayCard(activCard);
+  }else{
+    renderOverlayCard(activCard);
   }
 }
