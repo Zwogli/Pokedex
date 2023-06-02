@@ -16,8 +16,6 @@
     margin: 0;
     position: relative;
     overflow: hidden;
-    &-infos{
-      height: calc(100% - 60px);
       &-typ{
         position: absolute;
         bottom: 0px;
@@ -28,8 +26,8 @@
     &-img{
       z-index: 2;
     }
-  }
 }
+
 .overlay-pokemon-more{
   min-height: 250px;
   width: 100%;
@@ -44,6 +42,31 @@
     &-arrow{
       width: 32px;
     }
+  }
+}
+.overlay-pokemon-infos{
+  height: calc(100% - 60px);
+  ul{
+    list-style: none;
+  }
+  td{
+    padding-left: 18px;
+  }
+  td:first-child{
+    font-weight: bold;
+  }
+  &-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-moves{
+    max-height: 250px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

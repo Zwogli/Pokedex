@@ -111,15 +111,12 @@ function renderPokemonMoves(pokemon, i){
     const pokemonAllMoves = pokemon.moves[j];
 
     containerId.innerHTML += /*html*/`
-    <li>
-      <span>${pokemonAllMoves.move.name}</span
-      >
-    </li>
+      <span>${pokemonAllMoves.move.name}</span>
     `;
   }
 }
 
-async function overlayPokemonGellery(newCard, i){
+async function overlayPokemonGallery(newCard, i){
   let activCard = i + newCard
   if(activCard <= 0){
     let activCard = 1 //allPokemonsNumber
@@ -130,4 +127,21 @@ async function overlayPokemonGellery(newCard, i){
   }else{
     renderOverlayCard(activCard);
   }
+}
+
+function overlayMoreSection(aktivSection, i){
+  document.getElementById(`about-headline${i}`).classList.remove('fw-bold');
+  document.getElementById(`baseStat-headline${i}`).classList.remove('fw-bold');
+  document.getElementById(`moves-headline${i}`).classList.remove('fw-bold');
+
+  document.getElementById(`${aktivSection}headline${i}`).classList.add('fw-bold');
+  showHideInfoSection(aktivSection, i);
+}
+
+function showHideInfoSection(aktivSection, i){
+  document.getElementById(`about-${i}`).classList.add('d-none');
+  document.getElementById(`baseStat-${i}`).classList.add('d-none');
+  document.getElementById(`moves-${i}`).classList.add('d-none');
+
+  document.getElementById(`${aktivSection}${i}`).classList.remove('d-none');
 }

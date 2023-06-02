@@ -51,17 +51,17 @@ function generatePokemonCard(pokemon, i, pokemonId){
     </div>
     <div id="overlay-pokemon-more" onclick="event.stopPropagation()" class="overlay-pokemon-more">
       <div class="overlay-pokemon-more-headline">
-        <img onclick="overlayPokemonGellery(-1, ${i})" class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_left.png" alt="arrow left">
-        <span>About</span>
-        <span>Base Stat</span>
-        <span>Moves</span>
-        <img onclick="overlayPokemonGellery(1, ${i})" class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_right.png" alt="arrow right">
+        <img onclick="overlayPokemonGallery(-1, ${i})" class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_left.png" alt="arrow left">
+        <span id="about-headline${i}" onclick="overlayMoreSection('about-', ${i})" class="">About</span>
+        <span id="baseStat-headline${i}" onclick="overlayMoreSection('baseStat-', ${i})" class="fw-bold">Base Stat</span>
+        <span id="moves-headline${i}" onclick="overlayMoreSection('moves-', ${i})" class="">Moves</span>
+        <img onclick="overlayPokemonGallery(1, ${i})" class="overlay-pokemon-more-headline-arrow" src="assets/img/icon/arrow_right.png" alt="arrow right">
       </div>
 
-      <div>
-        <ul id="about-${i}" class=""></ul>
-        <ul id="baseStat-${i}" class="d-none"></ul>
-        <ul id="moves-${i}" class="d-none"></ul>
+      <div class="overlay-pokemon-infos">
+        <div id="about-${i}" class="overlay-pokemon-infos-about d-none"></div>
+        <ul id="baseStat-${i}" class=""></ul>
+        <div id="moves-${i}" class="overlay-pokemon-infos-moves d-none" ></div>
       </div>
 
     </div>
@@ -70,21 +70,23 @@ function generatePokemonCard(pokemon, i, pokemonId){
 
 function generatePokemonAboutHtml(pokemon, i){
   return /*html*/`
-  <li>
-    <span>base experience:</span>
-    <span>${pokemon.base_experience}</span>
-  </li>
-  <li>
-    <span>height:</span>
-    <span>${pokemon.height}</span>
-  </li>
-  <li>
-    <span>weight:</span>
-    <span>${pokemon.weight}</span>
-  </li>
-  <li>
-    <span>typ:</span>
-    <ol id="about-typ-${i}"></ol>
-  </li>
+  <table>
+    <tr>
+      <td>base experience:</td>
+      <td>${pokemon.base_experience}</td>
+    </tr>
+    <tr>
+      <td>height:</td>
+      <td>${pokemon.height}</td>
+    </tr>
+    <tr>
+      <td>weight:</td>
+      <td>${pokemon.weight}</td>
+    </tr>
+    <tr>
+      <td>typ:</td>
+      <td><span id="about-typ-${i}"></span></td>
+    </tr>
+  </table>
    `
 }
