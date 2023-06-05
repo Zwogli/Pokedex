@@ -1,5 +1,5 @@
 .overlay{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -36,6 +36,7 @@
   margin-top: -10px;
   &-headline{
     height: 60px;
+    margin-top: 12px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -61,6 +62,7 @@
     align-items: center;
   }
   &-moves{
+    margin: 0px 20% 12px 20%;
     max-height: 250px;
     overflow-y: scroll;
     display: flex;

@@ -72,19 +72,19 @@ function generatePokemonAboutHtml(pokemon, i){
   return /*html*/`
   <table>
     <tr>
-      <td>base experience:</td>
+      <td>Base Experience:</td>
       <td>${pokemon.base_experience}</td>
     </tr>
     <tr>
-      <td>height:</td>
+      <td>Height:</td>
       <td>${pokemon.height}</td>
     </tr>
     <tr>
-      <td>weight:</td>
+      <td>Weight:</td>
       <td>${pokemon.weight}</td>
     </tr>
     <tr>
-      <td>typ:</td>
+      <td>Typ:</td>
       <td><span id="about-typ-${i}"></span></td>
     </tr>
   </table>
