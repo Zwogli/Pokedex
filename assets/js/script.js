@@ -39,6 +39,7 @@ async function renderPokemons(){
 }
 
 function renderPokemonTypes(pokemon, i){
+  document.getElementById(`main_pokemon_typ-${i}`).innerHTML = '';
   for (let j = 0; j < pokemon.types.length; j++) {
     let pokemonTypes = pokemon.types[j].type.name;
     let firstType = pokemon.types[0].type.name;

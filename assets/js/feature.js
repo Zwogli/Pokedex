@@ -6,11 +6,23 @@ function searchbarToggle(){
   main.classList.toggle('main-mtop');
 }
 
-async function searchPokemon(){
+// async function emptySearchbar(){
+//   let searchPokemon = document.getElementById('searchbar-input').value;
+//   if(searchPokemon == ''){
+//     document.getElementById('main-section').innerHTML = '';
+//     loadedPokemon = 1;
+//     renderPokemons();
+//   }else{
+//     searchPokemons();
+//   }
+// }
+
+async function searchPokemons(){
   let searchPokemon = document.getElementById('searchbar-input').value;
+  let searchPokemonToLowerCase = searchPokemon.toLowerCase();
   document.getElementById('main-section').innerHTML = '';
   
-  if(searchPokemon == ''){
+  if(searchPokemonToLowerCase == ''){
     loadedPokemon = 1;
     renderPokemons();
   }else{
@@ -18,7 +30,7 @@ async function searchPokemon(){
       let searchedPokemonJson = allPokemonsJson[i];
       let pokemonName = searchedPokemonJson['name'];
     
-      if (pokemonName.includes(searchPokemon) && searchPokemon != '') {
+      if (pokemonName.includes(searchPokemonToLowerCase) && searchPokemon != '') {
         filterPokemonMain(searchedPokemonJson, i);
       }else if(searchPokemon != ''){
         renderPokemons();

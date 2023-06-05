@@ -118,6 +118,10 @@ Progressbar
     display: none;
   }
 }
+.input-search::-webkit-search-cancel-button {
+  display: none;
+}
+
 .main {
   min-height: calc(100vh - 78px);
   margin-top: 78px;
