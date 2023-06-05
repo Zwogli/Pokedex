@@ -12,6 +12,7 @@
         "savePath": "/assets/css"
       }
     ],
-    "liveSassCompile.settings.generateMap": false //,
+    "liveSassCompile.settings.generateMap": false,
+    // "liveServer.settings.port": 5501,
     // "liveServer.settings.CustomBrowser": "PiP Browser"
 }
