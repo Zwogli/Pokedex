@@ -10,14 +10,21 @@ async function searchPokemon(){
   let searchPokemon = document.getElementById('searchbar-input').value;
   document.getElementById('main-section').innerHTML = '';
   
-  for (let i = 0; i < allPokemonsJson.length; i++) {
-    let searchedPokemonJson = allPokemonsJson[i];
-    let pokemonName = searchedPokemonJson['name'];
+  if(searchPokemon == ''){
+    loadedPokemon = 1;
+    renderPokemons();
+  }else{
+    for (let i = 0; i < allPokemonsJson.length; i++) {
+      let searchedPokemonJson = allPokemonsJson[i];
+      let pokemonName = searchedPokemonJson['name'];
     
-    if (pokemonName.includes(searchPokemon)) {
-      filterPokemonMain(searchedPokemonJson, i);
+      if (pokemonName.includes(searchPokemon) && searchPokemon != '') {
+        filterPokemonMain(searchedPokemonJson, i);
+      }else if(searchPokemon != ''){
+        renderPokemons();
+      }
     }
-  }
+  } 
 }
 
 async function filterPokemonMain(searchedPokemonJson, i){
