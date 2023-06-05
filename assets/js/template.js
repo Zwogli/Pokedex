@@ -60,7 +60,7 @@ function generatePokemonCard(pokemon, i, pokemonId){
 
       <div class="overlay-pokemon-infos">
         <div id="about-${i}" class="overlay-pokemon-infos-about d-none"></div>
-        <ul id="baseStat-${i}" class=""></ul>
+        <div id="baseStat-${i}" class=""></div>
         <div id="moves-${i}" class="overlay-pokemon-infos-moves d-none" ></div>
       </div>
 
@@ -70,7 +70,7 @@ function generatePokemonCard(pokemon, i, pokemonId){
 
 function generatePokemonAboutHtml(pokemon, i){
   return /*html*/`
-  <table>
+  <table class="border-box">
     <tr>
       <td>Base Experience:</td>
       <td>${pokemon.base_experience}</td>

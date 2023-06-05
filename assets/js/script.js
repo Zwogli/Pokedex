@@ -84,7 +84,17 @@ function renderPokemonAbout(pokemon, i){
     containerIdTyp.innerHTML += /*html*/`
       <li>${pokemonAllTypes.type.name}</li>
     `;
-  }
+  };
+  renderPokemonDescription(i);
+}
+
+async function renderPokemonDescription(i) {
+  let url = `https://pokeapi.co/api/v2/pokemon-species/${i}`;
+  let response = await fetch(url);
+  let speciesInfo = await response.json();
+  document.getElementById(`about-${i}`).innerHTML += /*html*/`
+   <p class="border-box">${speciesInfo["flavor_text_entries"][9]["flavor_text"]}</p> 
+  `;
 }
 
 function renderPokemonBaseStats(pokemon, i){
@@ -95,10 +105,16 @@ function renderPokemonBaseStats(pokemon, i){
     const pokemonAllStats = pokemon.stats[j];
     
     containerId.innerHTML += /*html*/`
-    <li>
+    <!-- <li>
       <span>${pokemonAllStats.stat.name}</span>
       <span>${pokemonAllStats.base_stat}</span>
-    </li>
+    </li> -->
+    <div class="statBar">
+            <div id="statName">${pokemonAllStats['stat']['name']}</div>
+            <div class="progress" style="height: 15px;">
+              <div class="progress-bar" role="progressbar" style="width: ${pokemonAllStats['base_stat']-15}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">${pokemonAllStats['base_stat']}</div>
+            </div>
+        </div> 
     `;
   }
 }
@@ -111,7 +127,7 @@ function renderPokemonMoves(pokemon, i){
     const pokemonAllMoves = pokemon.moves[j];
 
     containerId.innerHTML += /*html*/`
-      <span>${pokemonAllMoves.move.name}</span>
+      <span class="overlay-pokemon-infos-move border-box-move">${pokemonAllMoves.move.name}</span>
     `;
   }
 }
