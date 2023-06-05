@@ -31,6 +31,14 @@ Progressbar
   text-transform: uppercase;
 }
 
+.c-default {
+  cursor: default;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
 .fw-bold {
   font-weight: bold;
 }
@@ -221,6 +229,9 @@ Progressbar
 .load-more-txt {
   font-size: larger;
   font-weight: bolder;
+}
+.load-more:hover {
+  font-size: 28px;
 }
 
 @media (min-width: 500px) {

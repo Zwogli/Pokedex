@@ -109,6 +109,9 @@
     font-size: larger;
     font-weight: bolder;
   }
+  &:hover{
+    font-size: 28px;
+  }
 }
 
 @media(min-width: 500px){
