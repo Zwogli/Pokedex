@@ -97,6 +97,20 @@
   }
 }
 
+.load-more{
+  min-height: 78px;
+  background-color: #323232 !important;
+  border: 2px solid #2F2F2F;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-txt{
+    font-size: larger;
+    font-weight: bolder;
+  }
+}
+
 @media(min-width: 500px){
   .main-section{
     padding: 16px;

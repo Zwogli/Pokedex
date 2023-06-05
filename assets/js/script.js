@@ -1,8 +1,14 @@
 let allPokemonsNumber,
     loadIntervall = 50,
+    loadedPokemon = 1,
     overlayToggle = false,
     allPokemonsJson,
     searchedPokemon = [];
+
+function loadMorePokemon(){
+  loadIntervall = loadIntervall + 30;
+  renderPokemons();
+}
 
 async function loadAllPokemons(){
   // load all Pokemons
@@ -14,12 +20,12 @@ async function loadAllPokemons(){
   allPokemonsNumber = allPokemonsResultsUrl.length;
 
   //! console.log('Any Pokemon', allPokemonsNumber);
-
   renderPokemons();
 }
 
 async function renderPokemons(){
-  for (let i = 1; i <= loadIntervall; i++) {
+  for (let i = loadedPokemon; i <= loadIntervall; i++) {
+    loadedPokemon++
     let allPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${i}/`;
     let response = await fetch(allPokemonUrl);
     let respondPokemon = await response.json();
@@ -27,7 +33,6 @@ async function renderPokemons(){
     let pokemonId = numberToStringID(pokemon);
     
     //! console.log(pokemon);
-    
     generateHtmlMainPagePokemon(pokemon, i, pokemonId);
     renderPokemonTypes(pokemon, i);
   }
@@ -105,16 +110,12 @@ function renderPokemonBaseStats(pokemon, i){
     const pokemonAllStats = pokemon.stats[j];
     
     containerId.innerHTML += /*html*/`
-    <!-- <li>
-      <span>${pokemonAllStats.stat.name}</span>
-      <span>${pokemonAllStats.base_stat}</span>
-    </li> -->
-    <div class="statBar">
-            <div id="statName">${pokemonAllStats['stat']['name']}</div>
-            <div class="progress" style="height: 15px;">
-              <div class="progress-bar" role="progressbar" style="width: ${pokemonAllStats['base_stat']-15}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">${pokemonAllStats['base_stat']}</div>
-            </div>
-        </div> 
+      <div class="statBar">
+        <div id="statName">${pokemonAllStats['stat']['name']}</div>
+          <div class="progress" style="height: 15px;">
+            <div class="progress-bar" role="progressbar" style="width: ${pokemonAllStats['base_stat']-15}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">${pokemonAllStats['base_stat']}</div>
+          </div>
+      </div> 
     `;
   }
 }
