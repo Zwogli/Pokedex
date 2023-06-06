@@ -38,6 +38,7 @@ function generatePokemonCard(pokemon, i, pokemonId){
   pokemonCard.innerHTML = /*html*/`
     <div id="overlay_pokemon_${i}" onclick="event.stopPropagation()" class="overlay-pokemon">  
       <h1 class="main-pokemon-name overlay-pokemon-name c-default">${pokemon['name']}</h1>
+      <img onclick="toggleOverlay()" class="img-close" src="assets/img/icon/cancel.svg" alt="close">
       <div class="main-pokemon-infos overlay-pokemon-infos">
         <div class="main-pokemon-infos-id_typ">
           <span class="main-pokemon-infos-id c-default">#${pokemonId}</span>
